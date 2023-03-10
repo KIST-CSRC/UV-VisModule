@@ -220,7 +220,7 @@ class Pipette(ParamterPipette):
                 # inital point
                 swift.set_position(x=self.init_loc[0], y=self.init_loc[1], z=self.init_loc[2], speed=self.robot_speed)
                 time.sleep(0.5)
-                tip_status = detection()
+                tip_status = detection_real()
 
                 if tip_status==True: # tip detection
                     break
