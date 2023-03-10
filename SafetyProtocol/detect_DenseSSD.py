@@ -31,6 +31,9 @@ normalize = transforms.Normalize(mean=[0.485, 0.456, 0.406],
 
 
 def visualize_detection(original_image, min_score, max_overlap, top_k, path=None):
+    """
+    :return False or image(True) (boolean)
+    """
 
     image = normalize(to_tensor(resize(original_image))).to(config.device)
 
@@ -76,9 +79,13 @@ def visualize_detection(original_image, min_score, max_overlap, top_k, path=None
 
         return original_image
 
-if __name__ == "__main__":
+def detection_test():
+    """
+    testing image
+    """
     
     image_dir = 'Dataset/img/'
+    label_txt = "Dataset/valid_p.txt"
 
     with open(label_txt) as f:
         lines = f.readlines()
@@ -94,6 +101,34 @@ if __name__ == "__main__":
         original_image = Image.open(image_path, mode='r')
         original_image = original_image.convert('RGB')
         visualize_detection(original_image, min_score=0.2, max_overlap=0.6, top_k=200,
-                            path='Dataset/img/'+folder[0]+'_'+folder[1])
+                            path='Dataset/test/'+folder[0]+'_'+folder[1])
 
     return visualize_detection
+
+def detection_real():
+    """
+    detect in real scene
+    """
+    cap = cv2.VideoCapture(0)
+    status = True
+
+    while status:
+        retval, frame = cap.read()
+        if not(retval):	# if not read frame information
+            break  # terminate while loop
+
+        # convert from BGR to RGB
+        color_coverted = cv2.cvtColor(opencv_image, cv2.COLOR_BGR2RGB)
+
+        # convert from openCV2 to PIL
+        pil_image=Image.fromarray(color_coverted)
+
+        pipette_status=visualize_detection(original_image, min_score=0.2, max_overlap=0.6, top_k=200,
+                            path='Dataset/test/'+folder[0]+'_'+folder[1])
+        
+        if bool(pipette_status) == True:
+            status = False
+            return pipette_status
+    
+    cap.release()
+    cv2.destroyAllWindows()
