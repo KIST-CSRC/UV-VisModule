@@ -6,7 +6,7 @@
   <img src="img\UVPlatform_architecture.png" width="70%" height="70%" />
 </p>
 
-This repository contains source code of UV-Vis hardware for nanoparticle analysis. We follow [OpenLH [1]](https://www.instructables.com/OpenLH/) and construct system based on robotic settings. This system is controlled by [MasterPlatform](https://github.com/KIST-CSRC/BespokeSynthesisPlatform)
+This repository contains source code of UV-Vis hardware for nanoparticle analysis. We follow [OpenLH [1]](https://www.instructables.com/OpenLH/) and construct system based on robotic settings. This system is controlled by [BespokeSynthesisPlatform](https://github.com/KIST-CSRC/BespokeSynthesisPlatform)
 
 ## Device settings
 
