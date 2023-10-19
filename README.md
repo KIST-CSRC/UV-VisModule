@@ -24,6 +24,8 @@ This repository contains source code of UV-Vis hardware for nanoparticle analysi
   <img src="img\UV_PipetteMachine.gif" width="70%" height="70%" />
 </p>
 
+This hardware was reffered by OpenLH.[1]
+
 
 ## Installation
 
@@ -81,4 +83,5 @@ UV-VisModule
 ```
 
 ## Reference
-1. Gome, Gilad, et al. "OpenLH: open liquid-handling system for creative experimentation with biology." Proceedings of the Thirteenth International Conference on Tangible, Embedded, and Embodied Interaction. 2019.
+[1] Gome, Gilad, et al. "OpenLH: open liquid-handling system for creative experimentation with biology." Proceedings of the Thirteenth International Conference on Tangible, Embedded, and Embodied Interaction. 2019.
+[2] Yoo, H. J., Kim, N., Lee, H., Kim, D., Ow, L. T. C., Nam, H., ... & Han, S. S. (2023). Bespoke Nanoparticle Synthesis and Chemical Knowledge Discovery Via Autonomous Experimentations. arXiv preprint arXiv:2309.00349.
